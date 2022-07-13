@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 function Home() {
   return (
     <div
@@ -10,6 +12,11 @@ function Home() {
       }}
     >
       <h1>Welcome Home! </h1>
+      <ul>
+        <li>
+          <Link href="/forms">Forms</Link>
+        </li>
+      </ul>
     </div>
   );
 }
