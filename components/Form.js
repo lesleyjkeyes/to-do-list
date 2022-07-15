@@ -8,7 +8,7 @@ const initialState = {
   effort: '',
 };
 
-function Form({ obj, addTask, setEditTask }) {
+function Form({ obj, addTask, setEditItem }) {
   const [formInput, setFormInput] = useState(initialState);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ function Form({ obj, addTask, setEditTask }) {
 
   const resetForm = () => {
     setFormInput({ ...initialState });
-    setEditTask({});
+    setEditItem({});
   };
 
   const handleSubmit = (event) => {
@@ -39,10 +39,10 @@ function Form({ obj, addTask, setEditTask }) {
   };
 
   const handleChange = (event) => {
-    const { task, value } = event.target;
+    const { name, value } = event.target;
     setFormInput((prevState) => ({
       ...prevState,
-      [task]: value,
+      [name]: value,
     }));
   };
 
@@ -85,7 +85,7 @@ Form.propTypes = {
     effort: PropTypes.string,
   }),
   addTask: PropTypes.func.isRequired,
-  setEditTask: PropTypes.func.isRequired,
+  setEditItem: PropTypes.func.isRequired,
 };
 
 Form.defaultProps = {

@@ -12,10 +12,10 @@ export default function Forms() {
 
   return (
     <>
-      {tasks.map((person) => (
-        <TaskCard key={person.name} person={person} setEditItem={setEditItem} />
+      {tasks.map((item) => (
+        <TaskCard key={item.task} item={item} setEditItem={setEditItem} />
       ))}
-      <Form obj={editItem} addPerson={addTask} setEditItem={setEditItem} />
+      <Form obj={editItem} addTask={addTask} setEditItem={setEditItem} />
     </>
   );
 }
